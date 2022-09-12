@@ -3,9 +3,6 @@
 # Можете использовать xor, биты, библиотеку time или datetime (миллисекунды или наносекунды) - для задания случайности
 # Учтите, что есть диапазон: от(минимальное) и до (максимальное)
 
-
-
-from multiprocessing import Array
 from random import randint
 import time
 
@@ -13,12 +10,13 @@ import time
 
 def randomaizer(max):
 
-    numbers = int(time.time_ns() % 100000000 / 100)
-    while max <= numbers:
-        int(numbers) = numbers / 10
+    numbers_1 = int((time.time_ns() - (time.time_ns()/10))%1000)
+ 
+    # while max <= numbers:
+    #     numbers //= 10
  
 
-    #return numbers
+    return numbers_1
 print(randomaizer(100)) 
 
 def rnd_array(lengs_array):
