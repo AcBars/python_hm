@@ -8,7 +8,7 @@
 
 
 
-from my_functions import rnd_array
+from my_functions import rndint_array
 
 def product_numbers(arr):
     """This is a function that will find the product of pairs of numbers in the list."""
@@ -21,6 +21,6 @@ def product_numbers(arr):
     return arr_result
 
 len_list = int(input('Введите длину списка чисел: '))
-initial_list = rnd_array(len_list)
+initial_list = rndint_array(len_list)
 
 print(f'{initial_list} => {product_numbers(initial_list)}')
