@@ -8,6 +8,16 @@
 # [Негафибоначчи](https://clck.ru/yWbkX.)
 
 count = int(input('Введите число: '))
-neg_fibonachi = [-1, 1, 0, 1]
+fibonachi = [0, 1]
 for i in range(1, count):
-    
+    temp = fibonachi[i - 1] + fibonachi[i]
+    fibonachi.append(temp)
+neg_fibonachi = [0, 1]
+for i in range(1, count):
+    temp = neg_fibonachi[i - 1] - neg_fibonachi[i]
+    neg_fibonachi.append(temp)
+neg_fibonachi.remove(0)
+list.reverse(neg_fibonachi)
+neg_fibonachi.extend(fibonachi)
+
+print(neg_fibonachi)
