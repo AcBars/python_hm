@@ -36,3 +36,12 @@ def con_nuber(numer_temp):
     for i in range(len(numer_temp)):
         result = result + numer_temp[i] * 10 ** (len(numer_temp) - i -1)
     return result
+
+def check_numberint (number):
+    while type: 
+        try:
+            number = int(number)      
+            return number
+        except ValueError:
+            print('Вы ввели не целое число! ')
+            number = input('Введите целое число: ')
