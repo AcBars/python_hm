@@ -38,6 +38,7 @@ def con_nuber(numer_temp):
     return result
 
 def check_numberint (number):
+    """Проверка введенного числа, вводит ли ползователь int?"""
     while type: 
         try:
             number = int(number)      
@@ -45,3 +46,13 @@ def check_numberint (number):
         except ValueError:
             print('Вы ввели не целое число! ')
             number = input('Введите целое число: ')
+            
+def check_numberfloat (number):
+    """Проверка введенного числа, вводит ли ползователь float?"""
+    while type: 
+        try:
+            number = float(number)      
+            return number
+        except ValueError:
+            print('Вы ввели не вещественное число! ')
+            number = input('Введите вещественное число: ')
