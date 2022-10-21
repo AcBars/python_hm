@@ -1,16 +1,40 @@
-# 5-Напишите программу, которая принимает на вход координаты двух точек и находит
-# расстояние между ними в 2D пространстве.
+# Задайте двумерный массив из целых чисел. Количество строк и столбцов задается с клавиатуры. Отсортировать элементы по возрастанию слева 
+# направо и сверху вниз.
 
-# *Пример:*
+# Например, задан массив:
+# 1 4 7 2
+# 5 9 10 3
 
-# - A (3,6); B (2,1) -> 5,09
-# - A (7,-5); B (1,-1) -> 7,21
+# После сортировки
+# 1 2 3 4
+# 5 7 9 1
 
-coord_a_x = int(input('Введите координату X точки A: '))
-coord_a_y = int(input('Введите координату Y точки A: '))
-coord_b_x = int(input('Введите координату X точки B: '))
-coord_b_y = int(input('Введите координату Y точки B: '))
-katet_x = coord_a_x - coord_b_x
-katet_y = coord_a_y - coord_b_y
-distance = (katet_x ** 2 + katet_y ** 2) ** 0.5
-print(f'Расстояние между точками A и B равно: {distance:.2f}')
+
+
+from my_functions import rndint_array
+
+array_2 = []
+array_2.append(rndint_array(4, 0, 10))
+array_2.append(rndint_array(4, 0, 10))
+print('До сортировки.')
+for i in range(2):
+    print(array_2[i])
+count = 0
+count_1 = 1
+while count < len(array_2[0]) * 2:
+    for i  in range(2):
+        for j in range(1, len(array_2[i])):
+            if array_2[i][j - 1] > array_2[i][j]:
+                temp = array_2[i][j - 1]
+                array_2[i][j - 1] = array_2[i][j]
+                array_2[i][j] = temp
+        if i == 1:
+            if array_2[i - 1][j] > array_2[i][0]:
+                temp = array_2[i - 1][j]
+                array_2[i - 1][j] = array_2[i][0]
+                array_2[i][0] = temp     
+    count += 1
+print('После сортировки.')
+for i in range(2):
+    print(array_2[i])
+        
