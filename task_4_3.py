@@ -8,19 +8,17 @@
 from random import randint
 
 
-k = str(input('Введите коэфициент k: '))
-k_1 = randint(0, 101)
-k_2 = randint(0, 101)
-k_3 = randint(0, 101)
-if k_1 == 0:
-    polynomial_list = [k, '+', k_2, 'x', '+', k_3]
-elif k_2 == 0:
-    polynomial_list = [k_1, 'x^', k, '+', k_3]
-elif k_3 == 0:
-    polynomial_list = [k_1, 'x^', k, '+', k_2, 'x']
-else:
-    polynomial_list = [k_1, 'x^', k, '+', k_2, 'x', '+', k_3]
-result = ''
-for i in range(len(polynomial_list)):
-    result = result + str(polynomial_list[i])
+k = int(input('Введите коэфициент k: '))
+polynomial_list = list()
+for i in range(k + 1):
+    temp = randint(0, 100)
+    if temp !=0:
+        if k-i == 1:
+            polynomial_list.append(str(temp) + '*x+')
+        elif k-i == 0:
+            polynomial_list.append(str(temp))
+        else:
+            polynomial_list.append(str(temp) + '*x^' + str(k-i) + '+')
+    
+result = list(polynomial_list)
 print(result)
