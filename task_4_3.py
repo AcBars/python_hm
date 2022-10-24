@@ -8,6 +8,7 @@
 from random import randint
 
 
+
 k = int(input('Введите коэфициент k: '))
 polynomial_list = list()
 for i in range(k + 1):
@@ -20,5 +21,10 @@ for i in range(k + 1):
         else:
             polynomial_list.append(str(temp) + '*x^' + str(k-i) + '+')
     
-result = list(polynomial_list)
-print(result)
+result = ''
+for i in range (len(polynomial_list)):
+    result += polynomial_list[i]
+with open('python_hm/task_4_3.txt', 'w') as f:
+    f.write(result)
+
+
