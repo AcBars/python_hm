@@ -17,8 +17,6 @@
 #     (1+2)*3 => 9;
 
 
-
-
 def chek_sign(con):
     if i:= con.find('+') >= 0:
         con_1 = con[0:i]
@@ -68,15 +66,3 @@ def minus(minus_1, minus_2):
 con = input('Введите условие: ')
 total_res = chek_sign(con)
 print(f'{con}={total_res}')
-
-
-# con = input('Введите условие: ')
-
-# if i:= con.find('*') >= 0:
-#     con_1 = con[0:i]
-#     con_2 = con[i + 1:]
-#     print(f'{con_1}*{con_2}={float(con_1)*float(con_2)}')
-# elif i:= con.find('/') >= 0:
-#     con_1 = con[0:i]
-#     con_2 = con[i + 1:]
-#     print(f'{con_1}/{con_2}={float(con_1)/float(con_2)}')
